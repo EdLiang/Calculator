@@ -1,8 +1,10 @@
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/calc.css" media="screen" />
+
 
 <html>
 <head>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
     <h1>Calculator Sim</h1>
@@ -39,6 +41,27 @@
         </table>
     </div>
     <span id='output'><!-- Use this span for writing debug messages --></span>
+
+    <h2>Welcome to my Calculator Simulator</h2>
+    <h3>How it works:</h3>
+    <p>
+        This calculator works as a normal calculator would.
+        </br>1. Start off by inputting a number by using the number buttons.
+        </br>&emsp;&emsp;A. If no number is input and the user tries to use an operation, you will be prompted to press a number first.
+        </br>2. After inputting your first number, you may now press an operation key.
+        </br>3. After pressing an operation key, you may:
+        </br>&emsp;&emsp;A. Press another operation key if you want to change the current operation.
+        </br>&emsp;&emsp;B. Input the next number.
+        </br>4. After inputting the next number, you may:
+        </br>&emsp;&emsp;A. Press the clear key ONCE to input a new second number.
+        </br>&emsp;&emsp;B. Press the Equal sign to evaluate.
+        </br>&emsp;&emsp;C. Press another operation key.
+        </br>5c. If another operation key was pressed, repeat steps 3 and 4.
+        </br>5b. If the Equal sign was pressed, you may:
+        </br>&emsp;&emsp;A. Press another operation key if you would like to operate on the current result.
+        </br>&emsp;&emsp;B. Press the Clear button to restart.
+        </br>6. If the user clicks the Clear button twice at any point in time, the calculator will be reset.
+    </p>
 </body>
 
 </html>

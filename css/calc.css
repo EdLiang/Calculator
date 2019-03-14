@@ -1,6 +1,5 @@
 ﻿body {
     background-color: black;
-    text-align: center;
     font-family: Cambria;
     color: white;
 }
@@ -10,16 +9,26 @@
 }
 
 h1 {
+    text-align: center;
     color: white;
     margin: auto;
-    margin: 2em;
+    margin: 1.5em;
+    font-weight: bold;
 }
 
 .table {
+    width: auto;
+    height: auto;
+    padding: 0;
     margin: auto;
     border-style: solid;
     border-color: white;
     border-radius: 5px;
+}
+
+#display {
+    width: 100%;
+    margin: auto;
 }
 
 button {
@@ -31,4 +40,22 @@ input {
     font-size: 14px;
     height: 40px;
     text-align: right;
+}
+
+h2 {
+    padding-top: 1.5em;
+    margin: 1.5em;
+    text-align: center;
+    margin: auto;
+}
+
+h3 {
+    margin: 1em;
+    display: block;
+    text-align: left;
+}
+
+p {
+    font-size: 1.3em;
+    margin: 1em;
 }
