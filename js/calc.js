@@ -64,18 +64,28 @@ $("button").click(
                 $('#display').val(value);
             }
             else if ($(this).prop('id') === 'clearButton') {
-                value = value.substring(0, value.length - 2);
-                operatorClicked = false;
-                $('#display').val(value);
-                $('#clearButton').click(
-                    function () {
-                        value = null;
-                        tempVal = null;
-                        numValue = 0;
-                        operatorClicked = false;
-                        $('#display').val(value);
-                    }
-                );
+                if (Number(value) == Number("plus")) {
+                    value = value.substring(0, value.length - 2);
+                    operatorClicked = false;
+                    $('#display').val(value);
+                    $('#clearButton').click(
+                        function () {
+                            value = null;
+                            tempVal = null;
+                            numValue = 0;
+                            operatorClicked = false;
+                            $('#display').val(value);
+                        }
+                    );
+                }
+                else {
+                    value = null;
+                    tempVal = null;
+                    numValue = 0;
+                    operatorClicked = false;
+                    $('#display').val(value);
+                }
+                
             }
             else {
                 if (value2 != null) {
@@ -142,53 +152,92 @@ $("button").click(
             }
             else if ($(this).prop('id') === 'equalsButton') {
                 if (operatorId == 'addButton') {
+                    //numAnswer = numValue + numValue2;
+                    //$('#display').val(numAnswer);
+                    //operatorId = "";
+                    //numValue = numAnswer;
+                    //value2 = null;
+                    //operatorClicked = true;
+                    //numValue2 = numAnswer;
+                    //value = numAnswer;
+
                     numAnswer = numValue + numValue2;
                     $('#display').val(numAnswer);
-                    operatorId = "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
                     operatorClicked = true;
-                    numValue2 = numAnswer;
                     value = numAnswer;
                 }
                 else if (operatorId == 'subtractButton') {
+                    //numAnswer = numValue - numValue2;
+                    //$('#display').val(numAnswer);
+                    //operatorId = "";
+                    //numValue = numAnswer;
+                    //value2 = null;
+                    //operatorClicked = true;
+                    //numValue2 = numAnswer;
+                    //value = numAnswer;
+
                     numAnswer = numValue - numValue2;
                     $('#display').val(numAnswer);
-                    operatorId = "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
                     operatorClicked = true;
-                    numValue2 = numAnswer;
                     value = numAnswer;
                 }
                 else if (operatorId == 'multiplyButton') {
+                    //numAnswer = numValue * numValue2;
+                    //$('#display').val(numAnswer);
+                    //operatorId = "";
+                    //numValue = numAnswer;
+                    //value2 = null;
+                    //operatorClicked = true;
+                    //numValue2 = numAnswer;
+                    //value = numAnswer;
+
                     numAnswer = numValue * numValue2;
                     $('#display').val(numAnswer);
-                    operatorId = "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
                     operatorClicked = true;
-                    numValue2 = numAnswer;
                     value = numAnswer;
                 }
                 else if (operatorId == 'divideButton') {
                     if (numValue2 == 0) {
+                        //numAnswer = "Infinity";
+                        //$('#display').val(numAnswer);
+                        //operatorId = "";
+                        //value2 = null;
+                        //operatorClicked = true;
+                        //numValue2 = numAnswer;
+                        //value = numAnswer;
+
                         numAnswer = "Infinity";
                         $('#display').val(numAnswer);
-                        operatorId = "";
+                        operatorId = $(this).prop('id');
                         value2 = null;
                         operatorClicked = true;
-                        numValue2 = numAnswer;
                         value = numAnswer;
                     }
                     else {
+                        //numAnswer = numValue / numValue2;
+                        //$('#display').val(numAnswer);
+                        //operatorId = $(this).prop('id');
+                        //numValue = numAnswer;
+                        //value2 = null;
+                        //operatorClicked = true;
+                        //numValue2 = numAnswer;
+                        //value = numAnswer;
+
                         numAnswer = numValue / numValue2;
                         $('#display').val(numAnswer);
                         operatorId = $(this).prop('id');
                         numValue = numAnswer;
                         value2 = null;
                         operatorClicked = true;
-                        numValue2 = numAnswer;
                         value = numAnswer;
                     }
                 }
