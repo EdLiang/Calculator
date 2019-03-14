@@ -95,43 +95,48 @@ $("button").click(
 
             }
         }
-        else if (value != ""  && value2 != null) {
+        else if (value != "" && value2 != null && value2 != "") {
             if ($(this).prop('id') === 'addButton' || $(this).prop('id') === 'subtractButton' || $(this).prop('id') === 'multiplyButton' || $(this).prop('id') === 'divideButton') {
                 operationClicked = true;
                 if (operatorId == 'addButton') {
                     numAnswer = numValue + numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
                 }
                 else if (operatorId == 'subtractButton') {
                     numAnswer = numValue - numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
                 }
                 else if (operatorId == 'multiplyButton') {
                     numAnswer = numValue * numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = $(this).prop('id');
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
                 }
                 else if (operatorId == 'divideButton') {
                     if (numValue2 == 0) {
                         numAnswer = "Infinity";
                         $('#display').val(numAnswer);
-                        operatorId == "";
+                        operatorId = $(this).prop('id');
                         value2 = null;
+                        operatorClicked = true;
                     }
                     else {
                         numAnswer = numValue / numValue2;
                         $('#display').val(numAnswer);
-                        operatorId == "";
+                        operatorId = $(this).prop('id');
                         numValue = numAnswer;
                         value2 = null;
+                        operatorClicked = true;
                     }
                 }
             }
@@ -139,37 +144,52 @@ $("button").click(
                 if (operatorId == 'addButton') {
                     numAnswer = numValue + numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = "";
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
+                    numValue2 = numAnswer;
+                    value = numAnswer;
                 }
                 else if (operatorId == 'subtractButton') {
                     numAnswer = numValue - numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = "";
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
+                    numValue2 = numAnswer;
+                    value = numAnswer;
                 }
                 else if (operatorId == 'multiplyButton') {
                     numAnswer = numValue * numValue2;
                     $('#display').val(numAnswer);
-                    operatorId == "";
+                    operatorId = "";
                     numValue = numAnswer;
                     value2 = null;
+                    operatorClicked = true;
+                    numValue2 = numAnswer;
+                    value = numAnswer;
                 }
                 else if (operatorId == 'divideButton') {
                     if (numValue2 == 0) {
                         numAnswer = "Infinity";
                         $('#display').val(numAnswer);
-                        operatorId == "";
+                        operatorId = "";
                         value2 = null;
+                        operatorClicked = true;
+                        numValue2 = numAnswer;
+                        value = numAnswer;
                     }
                     else {
                         numAnswer = numValue / numValue2;
                         $('#display').val(numAnswer);
-                        operatorId == "";
+                        operatorId = $(this).prop('id');
                         numValue = numAnswer;
                         value2 = null;
+                        operatorClicked = true;
+                        numValue2 = numAnswer;
+                        value = numAnswer;
                     }
                 }
             }
@@ -193,6 +213,22 @@ $("button").click(
                 numValue2 = Number(value2);
                 $('#display').val(value2);
                 operatorClicked = false;
+            }
+        }
+        else {
+            if ($(this).prop('id') === 'clearButton') {
+                value2 = null;
+                operatorClicked = true;
+                $('#display').val(value2);
+                $('#clearButton').click(
+                    function () {
+                        value = null;
+                        tempVal = null;
+                        numValue = 0;
+                        operatorClicked = false;
+                        $('#display').val(value);
+                    }
+                );
             }
         }
     }
